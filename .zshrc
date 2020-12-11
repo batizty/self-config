@@ -90,84 +90,19 @@ source $ZSH/oh-my-zsh.sh
 CLICOLOR=1
 LSCOLORS=gxfxcxdxbxegedabagacad
 
-alias ll="ls -lth"
-alias GoWork="cd ~/MyWork"
+## Login 10.8.163.167
+alias Go167="auto_login.exp 10.8.163.167"
+alias Go76="auto_login.exp 10.6.131.76"
+alias Go30="auto_login.exp 10.20.198.30"
+alias Go241="auto_login.exp 10.115.109.241"
+alias GoDevVm="auto_login.exp 10.227.27.110"
+alias GoDevVmI18n="auto_login.exp 10.231.253.245"
+alias Go96Core="auto_login.exp 10.148.111.212"
+alias GoTF="conda activate tensorflow"
+alias GoTF1="conda activate tf1.x"
+alias GoJumper="ssh jump.byted.org"
+alias vi="nvim"
+alias vim="nvim"
 
-### autologin remote sina remote server and innter server ###
-function auto_login_server {
-    if [[ $1 == "inner" ]] then
-        auto_login_sever_ip="10.210.66.44"
-        #auto_login_sever_ip="10.210.224.66"
-        auto_login_pwd=`cat ~/.ssh/inner_server_pgp`
-        login_server_ip=$2
-    else
-        auto_login_sever_ip="202.106.182.212"
-        auto_login_pwd=`cat ~/.ssh/remote_server_pgp`
-        login_server_ip=$1
-    fi
-
-    #echo "server id = $auto_login_sever_ip"
-    #echo "server passwd = $auto_login_pwd"
-    #echo "login_server_ip = $login_server_ip"
-
-    expect ~/.ssh/auto_login_server.sh $auto_login_sever_ip $auto_login_pwd $login_server_ip
-}
-
-### Login Remote Server Command ###
-alias GoRemoteServer="auto_login_server"
-alias GoInnerServer="auto_login_server inner"
-alias Go233="auto_login_server 10.39.6.233"
-alias Go64="auto_login_server 10.77.136.64"
-
-### scala 2.11.8 ###
-export SCALA_HOME="/usr/local/Cellar/scala/2.11.8"
-export PATH=$SCALA_HOME/bin:$PATH
-
-### Java 1.7 ###
-export JAVA_1_7_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
-
-### Java 1.8 ###
-export JAVA_1_8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home"
-
-### Java Home Setting ###
-export JAVA_HOME=$JAVA_1_8_HOME
-
-### Maven Settrings ###
-export MAVEN_HOME="/Users/tuoyu/MyWork/maven/apache-maven-3.3.9"
-export PATH=$MAVEN_HOME/bin:$PATH
-
-### Zookeeper Settings ###
-export ZOOKEEPER_HOME="/Users/tuoyu/MyWork/zookeeper/zookeeper-3.3.6"
-export PATH=$ZOOKEEPER_HOME/bin:$PATH
-
-### Storm Settings ###
-export STORM_HOME="/Users/tuoyu/MyWork/apache-storm-0.9.4"
-export PATH=$STORM_HOME/bin:$PATH
-
-### Gradle Settings ###
-export GRADLE_HOME="/Users/tuoyu/MyWork/gradle/gradle-3.0"
-export PATH=$GRADLE_HOME/bin:$PATH
-
-### Hadoop ####
-export HADOOP_HOME="/Users/tuoyu/MyWork/hadoop"
-export PATH=$HADOOP_HOME/bin:$PATH
-export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-
-### Hadoop 2.7.3 ###
-export HADOOP_2_7_3_HOME="/Users/tuoyu/MyWork/hadoop-2.7.3"
-
-### Hadoop 2.4.1 ###
-export HADOOP_2_4_1_HOME="/Users/tuoyu/MyWork/hadoop-2.4.1"
-
-### Grails ###
-export GRAILS_HOME="/Users/tuoyu/MyWork/grails/grails-2.4.3"
-export PATH=$GRAILS_HOME/bin:$PATH
-
-### Spark ###
-export SPARK_HOME="/Users/tuoyu/MyWork/spark-src/spark"
-#export SPARK_HOME="/Users/tuoyu/MyWork/spark"
-#export PATH=$SPARK_HOME/bin:$PATH
-
-### ICloud Work ###
-alias GoCloudWork="/Users/tuoyu/Library/Mobile Documents/com~apple~CloudDocs/MyCloudWork"
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
