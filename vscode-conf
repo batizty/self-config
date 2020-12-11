@@ -1,0 +1,56 @@
+vscode conf
+```
+{
+    "window.zoomLevel": 2,
+    "editor.fontFamily": "UbuntuMono Nerd Font Mono, MesloLGL Nerd Font, Cascadia Code",
+    "editor.fontLigatures": true,
+    "editor.suggestSelection": "first",
+    "html.format.enable": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "clang-format.executable": "/usr/bin/clang-format-4.0",
+    "workbench.sideBar.location": "left",
+    "gitlens.views.repositories.files.layout": "list",
+    "http.proxySupport": "off",
+    "gitlens.advanced.messages": {
+        "suppressGitVersionWarning": true
+    },
+    "workbench.statusBar.feedback.visible": false,
+    "C_Cpp.clang_format_sortIncludes": true,
+    // macOS:
+    "terminal.integrated.shellArgs.osx": [ "-l" ],
+    // Linux
+    "terminal.integrated.shellArgs.linux": [
+        "-l"
+    ],
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "c-cpp-flylint.clang.severityLevels": {
+    
+    },
+    "clang-format.assumeFilename": ".clang-format",
+    "clang-format.fallbackStyle": "Google",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "kite.showWelcomeNotificationOnStartup": false,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.clang.enable": false,
+    "editor.fontSize": 14,
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+
+    // terminal
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "'UbuntuMono Nerd Font Mono'",
+    "terminal.integrated.rendererType": "canvas",
+    "workbench.colorTheme": "Gruvbox Dark Soft",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
+}
+```
