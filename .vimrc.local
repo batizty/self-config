@@ -1,0 +1,68 @@
+" self config for vim
+
+colorscheme solarized8_dark_high
+
+set ts=4
+set nocompatible
+set nofoldenable                                                  " disable folding"
+set confirm                                                       " prompt when existing from an unsaved file
+set backspace=indent,eol,start                                    " More powerful backspacing
+set number                                                        " show line numbers
+set norelativenumber                                                " show relativenumber
+set showmatch                                                     " show matching bracket (briefly jump)
+set showcmd                                                       " show typed command in status bar
+set title                                                         " show file in titlebar
+
+" Default Indentation
+set autoindent
+set expandtab       " expand tab to space
+set smartindent     " indent when
+set tabstop=4       " tab width
+set softtabstop=4   " backspace
+set shiftwidth=4    " indent width
+set textwidth=120
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
+autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+
+let g:spf13_bundle_groups=['general', 'programming','python', 'go']
+
+let g:airline_theme = 'cool'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
+
+" tags
+set tags=./tags;../tags;
+
+" vim-fugitive
+set diffopt+=vertical  " set compare window to vectical show
+
+" 在 visual mode 下，* 和 # 查找光标选中的字符串。C-v 输入特殊字符。
+" " From an idea by Michael Naumann --------{{{---------
+function! VisualSearch(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . ""
+    else
+        execute "normal /" . l:pattern . ""
+    endif
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+" async run
+" automatically open quickfix window when AsyncRun command is executed
+" set the quickfix window 6 lines height.
+let g:asyncrun_open = 6
+"
+" ring the bell to notify you job finished
+let g:asyncrun_bell = 1
+"
+"" F10 to toggle quickfix window
+nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>"
